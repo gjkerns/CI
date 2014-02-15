@@ -4,7 +4,7 @@ library(shiny)
 shinyUI(pageWithSidebar(
 
   # Application title.
-  headerPanel("Simulating Confidence Intervals"),
+  # headerPanel("Simulating Confidence Intervals"),
   sidebarPanel(
     helpText("This app is a demonstration of confidence intervals.",
              "The length of the bars are the size of the intervals.",

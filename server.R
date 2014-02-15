@@ -1,7 +1,7 @@
 generator = function(n, pop.mean , pop.sd, conf.lvl) {
   plot(NULL, xlim = c(pop.mean - pop.sd, pop.mean + pop.sd),
        ylim = c(0,100), yaxt = 'n', xlab = (conf.lvl), 
-       ylab=(n), main="100 Confidence Intervals for 100 Samples")
+       ylab=(n), main="100 Replicated Confidence Intervals")
   abline(v = pop.mean, col = 'black')
   
   for (i in 1:100){
