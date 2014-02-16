@@ -3,7 +3,7 @@ library(shiny)
 # Define server logic required
 shinyServer(function(input, output) {
   output$confPlot <- renderPlot({
-
+    
     pop.mean <- input$mean
     pop.sd <- sqrt(input$variance)
     n <- input$nsamp
@@ -23,7 +23,6 @@ shinyServer(function(input, output) {
       else
       {lines(c(interval[1],interval[2]), c(i,i), lwd=2, col = 'red' )} 
     }
-    
     
   })
 })
