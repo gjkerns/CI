@@ -11,8 +11,8 @@ shinyServer(function(input, output) {
     nintv <- input$nintv
     
     plot(NULL, xlim = c(pop.mean - pop.sd, pop.mean + pop.sd),
-         ylim = c(0,100), yaxt = 'n', xlab = "", 
-         ylab="", main="Confidence Intervals")
+         ylim = c(1,nintv), yaxt = 'n', xlab = "", 
+         ylab="", main = "")
     abline(v = pop.mean, col = "blue")
     mtext(expression(mu), cex = 2, at = pop.mean, col = "blue")
     
