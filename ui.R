@@ -35,7 +35,7 @@ shinyUI(pageWithSidebar(
                  label=strong("How many intervals?"), 
                  value=100,
                  min=50, 
-                 max=150),
+                 max=150)
   ),
   
   # Show a summary of the dataset and an HTML table with the requested
