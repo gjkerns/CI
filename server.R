@@ -8,20 +8,22 @@ shinyServer(function(input, output) {
     pop.sd <- sqrt(input$variance)
     n <- input$nsamp
     conf.lvl <- input$conf.level
+    nintv <- input$nintv
     
     plot(NULL, xlim = c(pop.mean - pop.sd, pop.mean + pop.sd),
-         ylim = c(0,100), yaxt = 'n', xlab = (conf.lvl), 
-         ylab=(n), main="100 Replicated Confidence Intervals")
-    abline(v = pop.mean, col = 'black')
+         ylim = c(0,100), yaxt = 'n', xlab = "", 
+         ylab="", main="Confidence Intervals")
+    abline(v = pop.mean, col = "blue")
+    mtext(expression(mu), cex = 2, at = pop.mean, col = "blue")
     
-    for (i in 1:100){
+    for (i in 1:nintv){
       x <- rnorm(n, mean = pop.mean, sd = pop.sd)
-      test <- t.test(x, conf.level = conf.lvl)
-      interval <- test$conf.int
-      if(pop.mean > interval[1] & pop.mean < interval[2])
-      {lines(c(interval[1], interval[2]), c(i,i), lwd = 2, col = 'black')}
-      else
-      {lines(c(interval[1],interval[2]), c(i,i), lwd=2, col = 'red' )} 
+      interval <- t.test(x, conf.level = conf.lvl)$conf.int
+      if(pop.mean > interval[1] & pop.mean < interval[2]){
+        lines(c(interval[1], interval[2]), c(i,i), lwd = 2, col = 'black')
+      } else {
+        lines(c(interval[1],interval[2]), c(i,i), lwd = 3, col = 'red' )
+      } 
     }
     
   })
