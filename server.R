@@ -2,7 +2,7 @@ library(shiny)
 
 # Define server logic required
 shinyServer(function(input, output) {
-  output$lilPlot <- renderPlot({
+  output$confPlot <- renderPlot({
 
     pop.mean <- input$mean
     pop.sd <- sqrt(input$variance)

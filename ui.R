@@ -21,7 +21,7 @@ shinyUI(pageWithSidebar(
   # number of observations. Note the use of the h4 function to provide
   # an additional header above each output section.
   mainPanel(
-    plotOutput("conf.plot")
+    plotOutput("confPlot")
   )
 ))
 
